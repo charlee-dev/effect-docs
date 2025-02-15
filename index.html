@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,126 +10,321 @@
     <meta name="keywords" content="Effect-TS, TypeScript, Functional Programming, Documentation">
     <link rel="canonical" href="https://charlee-dev.github.io/effect-docs/" />
     <title>Effect-TS Documentation</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
     <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6e7681;
+            --border-color: #eaeaea;
+            --link-color: #0366d6;
+            --code-bg: #f6f8fa;
+            --scrollbar-thumb: #d1d5db;
+            --scrollbar-track: #f1f1f1;
+        }
+
+        .dark {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+            --link-color: #58a6ff;
+            --code-bg: #1f2428;
+            --scrollbar-thumb: #484f58;
+            --scrollbar-track: #24292e;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
         }
+
+        .container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
         nav {
             position: sticky;
-            top: 20px;
-            max-height: calc(100vh - 40px);
+            top: 0;
+            height: 100vh;
             overflow-y: auto;
             padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 30px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
         }
+
+        nav::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        nav::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+        }
+
+        nav::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 4px;
+        }
+
+        nav h2 {
+            margin-top: 0;
+            color: var(--text-primary);
+        }
+
         nav ul {
             list-style: none;
             padding: 0;
         }
+
         nav li {
             margin: 8px 0;
         }
+
+        nav a {
+            color: var(--link-color);
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 40px;
+            max-width: 800px;
+        }
+
         .section {
             margin: 40px 0;
             scroll-margin-top: 20px;
         }
+
         pre {
-            background-color: #f6f8fa;
+            background-color: var(--code-bg);
             padding: 16px;
             border-radius: 6px;
             overflow-x: auto;
         }
+
         code {
             font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
             font-size: 0.9em;
+            color: var(--text-primary);
         }
+
         h1, h2, h3, h4 {
             margin-top: 2em;
             margin-bottom: 1em;
+            color: var(--text-primary);
         }
-        hr {
-            margin: 3em 0;
-            border: none;
-            border-top: 1px solid #eaeaea;
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+
         img {
             max-width: 100%;
             height: auto;
         }
+
         #loading {
             text-align: center;
             padding: 2rem;
+            grid-column: 1 / -1;
+            color: var(--text-primary);
         }
+
         #error {
-            color: #cf222e;
+            color: #f85149;
             padding: 1rem;
             display: none;
+            grid-column: 1 / -1;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-primary);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            background: var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            main {
+                padding: 20px;
+            }
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="loading">Loading documentation...</div>
-    <div id="error"></div>
-    <div id="content"></div>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    <div class="container">
+        <div id="loading">Loading documentation...</div>
+        <div id="error"></div>
+        <div id="content"></div>
+    </div>
 
     <script>
+    // Theme toggle functionality
+    function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.classList.contains('dark');
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    }
+
+    // Set initial theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+
     const API_URL = 'https://api.github.com/repos/Effect-TS/website/contents/content/src/content/docs/docs';
-    
+    const GH_TOKEN = '';  // Escape single quotes
+
     async function fetchContent(url) {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch content');
+        const headers = {
+            'Accept': 'application/vnd.github.v3+json'
+        };
+        if (GH_TOKEN) {
+            headers['Authorization'] = `token ${GH_TOKEN}`;
+        }
+        const response = await fetch(url, { headers });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
         return data;
     }
 
+    async function getAllMarkdownUrls(baseUrl) {
+        const content = await fetchContent(baseUrl);
+        let urls = [];
+
+        for (const item of content) {
+            if (item.type === 'dir') {
+                const subUrls = await getAllMarkdownUrls(item.url);
+                urls = urls.concat(subUrls);
+            } else if (item.type === 'file' && 
+                     (item.name.endsWith('.md') || item.name.endsWith('.mdx'))) {
+                urls.push({
+                    name: item.name,
+                    path: item.path,
+                    download_url: item.download_url
+                });
+            }
+        }
+
+        return urls;
+    }
+
     async function fetchAndRenderDocs() {
         try {
-            const content = await fetchContent(API_URL);
-            const docs = content.filter(item => 
-                item.type === 'file' && (item.name.endsWith('.md') || item.name.endsWith('.mdx'))
-            );
+            const loadingEl = document.getElementById('loading');
+            loadingEl.textContent = 'Discovering documentation files...';
 
-            const markdownPromises = docs.map(async doc => {
-                const response = await fetch(doc.download_url);
+            const files = await getAllMarkdownUrls(API_URL);
+            loadingEl.textContent = `Loading ${files.length} documentation files...`;
+
+            const markdownPromises = files.map(async file => {
+                const response = await fetch(file.download_url);
                 const text = await response.text();
-                return { title: doc.name, content: marked(text) };
+                
+                // Simplify the ID creation to just use the filename without extension
+                const id = file.name
+                    .replace(/.(md|mdx)$/, '')
+                    .replace(/[^a-zA-Z0-9-]/g, '-')
+                    .toLowerCase();
+                
+                return { 
+                    title: file.name.replace(/.(md|mdx)$/, ''),
+                    path: file.path,
+                    id,
+                    content: window.marked.parse(text)
+                };
             });
 
             const renderedDocs = await Promise.all(markdownPromises);
+            renderedDocs.sort((a, b) => a.path.localeCompare(b.path));
             
-            document.getElementById('loading').style.display = 'none';
+            loadingEl.style.display = 'none';
             const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = '';
+            contentDiv.className = 'container'; // Add the container class here
             
+            // Create navigation
+            const nav = document.createElement('nav');
+            nav.innerHTML = '<h2>Documentation</h2><ul>' + 
+                renderedDocs.map(doc => 
+                    `<li><a href="#${doc.id}">${doc.title}</a></li>`
+                ).join('') + '</ul>';
+            
+            // Create main content
+            const main = document.createElement('main');
             renderedDocs.forEach(doc => {
                 const section = document.createElement('section');
+                section.id = doc.id;
+                section.className = 'section';
                 section.innerHTML = doc.content;
-                contentDiv.appendChild(section);
+                main.appendChild(section);
             });
+
+            contentDiv.appendChild(nav);
+            contentDiv.appendChild(main);
+
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1); // Remove the # symbol
+                const element = document.getElementById(hash);
+                if (element) element.scrollIntoView();
+            }
         } catch (error) {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('error').style.display = 'block';
-            document.getElementById('error').textContent = 
-                'Error loading documentation. Please try again later.';
             console.error('Error:', error);
+            document.getElementById('loading').style.display = 'none';
+            const errorEl = document.getElementById('error');
+            errorEl.style.display = 'block';
+            errorEl.innerHTML = `
+                <h2>Error loading documentation</h2>
+                <p>There was a problem loading the documentation. Details:</p>
+                <pre>${error.message}</pre>
+                <p>Please try again later or check the console for more details.</p>
+            `;
         }
     }
 
-    fetchAndRenderDocs();
+    // Start when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fetchAndRenderDocs);
+    } else {
+        fetchAndRenderDocs();
+    }
     </script>
 </body>
 </html>
