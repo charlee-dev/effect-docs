@@ -62,7 +62,7 @@ const generateDocs = async (): Promise<void> => {
 
     // Generate sitemap
     const baseUrl = 'https://charlee-dev.github.io/effect-docs/'
-    generateSitemap(baseUrl)
+    generateSitemap(baseUrl, urls)
 
     writeFileSync(path.join('dist', 'robots.txt'), `User-agent: *
 Allow: /

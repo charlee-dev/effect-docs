@@ -12,6 +12,7 @@ export const generateHtml = (markdownContents: string[]): string => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Effect-TS Documentation - Comprehensive guide for the Effect-TS library">
         <meta name="robots" content="index, follow">
+        <meta name="google-site-verification" content="TiD4HzIt_Zbv-VGlV7pQ1hNCCdFDS69LX5ESaj9PnMI" />
         <link rel="canonical" href="https://charlee-dev.github.io/effect-docs/" />
         <title>Effect-TS Documentation</title>
         <style>
@@ -54,6 +55,24 @@ export const generateHtml = (markdownContents: string[]): string => {
                 height: auto;
             }
         </style>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "headline": "Effect-TS Documentation",
+          "description": "Comprehensive guide for the Effect-TS library",
+          "author": {
+            "@type": "Organization",
+            "name": "Effect-TS"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Effect-TS"
+          },
+          "url": "https://charlee-dev.github.io/effect-docs/",
+          "inLanguage": "en"
+        }
+        </script>
     </head>
     <body>
         ${content}
