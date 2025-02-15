@@ -57,7 +57,7 @@ const generateDocs = async (): Promise<void> => {
     console.log('⬇️  Downloading documentation files...')
     const markdownContents = await Promise.all(urls.map(fetchMarkdown))
 
-    const html = generateHtml(markdownContents)
+    const html = await generateHtml(markdownContents)
     writeFileSync(path.join('dist', 'index.html'), html)
 
     // Generate sitemap
