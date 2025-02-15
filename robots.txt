@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+Disallow:
+
+# Sitemap
 Sitemap: https://charlee-dev.github.io/effect-docs/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
