@@ -16,16 +16,14 @@ interface GithubContent {
 }
 
 const fetchGithubContents = async (url: string): Promise<GithubContent[]> => {
-  console.log(`Fetching contents from: ${url}`)
   const response = await axios.get(url, {
     headers: {
       Accept: 'application/vnd.github.v3+json',
-      ...(process.env.GITHUB_TOKEN && {
-        Authorization: `token ${process.env.GITHUB_TOKEN}`
+      ...(process.env.GH_TOKEN && {
+        Authorization: `token ${process.env.GH_TOKEN}`
       })
     }
   })
-  console.log(`Found ${response.data.length} items`)
   return response.data
 }
 
@@ -35,13 +33,11 @@ const getAllMarkdownUrls = async (baseUrl: string): Promise<string[]> => {
 
   for (const content of contents) {
     if (content.type === 'dir') {
-      console.log(`Found directory: ${content.name}`)
       const subContents = await getAllMarkdownUrls(`${baseUrl}/${content.name}`)
       markdownUrls.push(...subContents)
     } else if (content.type === 'file' && 
               (content.name.endsWith('.md') || content.name.endsWith('.mdx')) && 
               content.download_url) {
-      console.log(`Found markdown file: ${content.path}`)
       markdownUrls.push(content.download_url)
     }
   }
@@ -51,31 +47,25 @@ const getAllMarkdownUrls = async (baseUrl: string): Promise<string[]> => {
 
 const generateDocs = async (): Promise<void> => {
   try {
-    console.log('Starting documentation generation...')
-    console.log('Creating dist directory...')
+    console.log('🚀 Starting documentation generation...')
     mkdirSync('dist', { recursive: true })
 
-    console.log('Fetching markdown URLs...')
     const urls = await getAllMarkdownUrls(BASE_URL)
-    console.log(`Found ${urls.length} markdown files`)
+    console.log(`📚 Found ${urls.length} documentation files`)
 
-    console.log('Fetching markdown content...')
-    const markdownContents = await Promise.all(
-      urls.map(async (url, index) => {
-        console.log(`Fetching content ${index + 1}/${urls.length}: ${url}`)
-        return fetchMarkdown(url)
-      })
-    )
+    console.log('⬇️  Downloading documentation files...')
+    const markdownContents = await Promise.all(urls.map(fetchMarkdown))
 
-    console.log('Generating HTML...')
     const html = generateHtml(markdownContents)
-
-    console.log('Writing output file...')
     writeFileSync(path.join('dist', 'index.html'), html)
-    console.log('Documentation generated successfully!')
-    console.log(`Generated HTML file size: ${(html.length / 1024).toFixed(2)}KB`)
+
+    console.log('\n✨ Documentation generated successfully!')
+    console.log(`📊 Summary:
+    - Files processed: ${urls.length}
+    - Output size: ${(html.length / 1024).toFixed(2)}KB
+    - Output location: ${path.resolve('dist/index.html')}`)
   } catch (error) {
-    console.error('Error generating documentation:', error)
+    console.error('❌ Error generating documentation:', error)
     process.exit(1)
   }
 }
