@@ -4,6 +4,7 @@ import { writeFileSync, mkdirSync } from 'fs'
 import path from 'path'
 import axios from 'axios'
 import dotenv from 'dotenv'
+import { generateSitemap } from './sitemap-generator'
 dotenv.config()
 
 const BASE_URL = 'https://api.github.com/repos/Effect-TS/website/contents/content/src/content/docs/docs'
@@ -59,11 +60,20 @@ const generateDocs = async (): Promise<void> => {
     const html = generateHtml(markdownContents)
     writeFileSync(path.join('dist', 'index.html'), html)
 
+    // Generate sitemap
+    const baseUrl = 'https://charlee-dev.github.io/effect-docs/'
+    generateSitemap(baseUrl)
+
+    writeFileSync(path.join('dist', 'robots.txt'), `User-agent: *
+Allow: /
+Sitemap: https://charlee-dev.github.io/effect-docs/sitemap.xml`)
+
     console.log('\n✨ Documentation generated successfully!')
     console.log(`📊 Summary:
     - Files processed: ${urls.length}
     - Output size: ${(html.length / 1024).toFixed(2)}KB
-    - Output location: ${path.resolve('dist/index.html')}`)
+    - Output location: ${path.resolve('dist/index.html')}
+    - Sitemap generated: ${path.resolve('dist/sitemap.xml')}`)
   } catch (error) {
     console.error('❌ Error generating documentation:', error)
     process.exit(1)

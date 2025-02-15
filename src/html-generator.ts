@@ -10,6 +10,9 @@ export const generateHtml = (markdownContents: string[]): string => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Effect-TS Documentation - Comprehensive guide for the Effect-TS library">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://charlee-dev.github.io/effect-docs/" />
         <title>Effect-TS Documentation</title>
         <style>
             body {
