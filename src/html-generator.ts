@@ -85,22 +85,26 @@ const generatePage = (section: Section, baseUrl: string) => `
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Effect-TS Documentation",
+      "description": "Complete guide for functional programming in TypeScript using Effect-TS",
+      "url": "https://charlee-dev.github.io/effect-docs/",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://charlee-dev.github.io/effect-docs/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "Effect-TS Documentation",
-      "description": "Comprehensive guide for the Effect-TS library. Learn about error handling, concurrency, resource management, and more.",
-      "author": {
-        "@type": "Organization",
-        "name": "Effect-TS"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Effect-TS"
-      },
-      "url": "https://charlee-dev.github.io/effect-docs/",
-      "inLanguage": "en",
-      "articleSection": ${JSON.stringify([section.title])},
-      "datePublished": "${new Date().toISOString().split('T')[0]}",
-      "dateModified": "${new Date().toISOString().split('T')[0]}"
+      "description": "Complete guide for functional programming in TypeScript using Effect-TS",
+      "keywords": "Effect-TS, TypeScript, Functional Programming, Error Handling, Concurrency",
+      "articleBody": "Comprehensive documentation for Effect-TS, covering error handling, concurrency, resource management, and more.",
+      "datePublished": "${new Date().toISOString()}",
+      "dateModified": "${new Date().toISOString()}"
     }
     </script>
 </head>
@@ -241,12 +245,16 @@ export const generateHtml = async (ghToken: string = ''): Promise<string> => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Effect-TS Documentation - Comprehensive guide for the Effect-TS library">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Effect-TS Documentation - Complete guide for functional programming in TypeScript. Learn about error handling, concurrency, resource management, and more.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="google-site-verification" content="TiD4HzIt_Zbv-VGlV7pQ1hNCCdFDS69LX5ESaj9PnMI" />
-    <meta name="keywords" content="Effect-TS, TypeScript, Functional Programming, Documentation">
+    <meta name="keywords" content="Effect-TS, TypeScript, Functional Programming, Error Handling, Concurrency, Resource Management, Effect System">
+    <meta property="og:title" content="Effect-TS Documentation">
+    <meta property="og:description" content="Complete guide for functional programming in TypeScript using Effect-TS">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://charlee-dev.github.io/effect-docs/">
     <link rel="canonical" href="https://charlee-dev.github.io/effect-docs/" />
-    <title>Effect-TS Documentation</title>
+    <title>Effect-TS Documentation - Complete TypeScript Functional Programming Guide</title>
     <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
     <style>
         :root {
@@ -424,11 +432,36 @@ export const generateHtml = async (ghToken: string = ''): Promise<string> => {
     </style>
 </head>
 <body>
+    <header>
+        <h1>Effect-TS Documentation</h1>
+        <p>Complete guide for functional programming in TypeScript</p>
+    </header>
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
     <div class="container">
         <div id="loading">Loading documentation...</div>
         <div id="error"></div>
-        <div id="content"></div>
+        <div id="content">
+            <article class="initial-content">
+                <h1>Effect-TS Documentation</h1>
+                <p>Welcome to the comprehensive guide for Effect-TS - a fully-fledged functional programming framework for TypeScript.</p>
+                
+                <h2>Key Topics</h2>
+                <ul>
+                    <li>Error Management</li>
+                    <li>Concurrency</li>
+                    <li>Resource Management</li>
+                    <li>State Management</li>
+                    <li>Testing</li>
+                </ul>
+
+                <noscript>
+                    <p>This documentation requires JavaScript to be enabled. Please enable JavaScript to view the full documentation.</p>
+                    <p>Alternatively, you can view the documentation directly on GitHub at: 
+                       <a href="https://github.com/Effect-TS/website/tree/main/content/src/content/docs/docs">Effect-TS Docs on GitHub</a>
+                    </p>
+                </noscript>
+            </article>
+        </div>
     </div>
 
     <script>

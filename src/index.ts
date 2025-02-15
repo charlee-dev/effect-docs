@@ -14,7 +14,13 @@ const generateDocs = async (): Promise<void> => {
 
     writeFileSync(path.join('dist', 'robots.txt'), `User-agent: *
 Allow: /
-Sitemap: https://charlee-dev.github.io/effect-docs/sitemap.xml`)
+Disallow:
+
+# Sitemap
+Sitemap: https://charlee-dev.github.io/effect-docs/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10`)
 
     console.log('\n✨ Documentation generated successfully!')
     console.log(`📊 Summary:
