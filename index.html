@@ -4,11 +4,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Effect-TS Documentation - Comprehensive guide for the Effect-TS library">
+        <meta name="description" content="Effect-TS Documentation - Comprehensive guide for the Effect-TS library. Learn about error handling, concurrency, resource management, and more.">
         <meta name="robots" content="index, follow">
         <meta name="google-site-verification" content="TiD4HzIt_Zbv-VGlV7pQ1hNCCdFDS69LX5ESaj9PnMI" />
+        <meta name="keywords" content="Effect-TS, TypeScript, Functional Programming, Error Handling, Concurrency, Resource Management">
         <link rel="canonical" href="https://charlee-dev.github.io/effect-docs/" />
-        <title>Effect-TS Documentation</title>
+        <title>Effect-TS Documentation - Complete Guide</title>
         <style>
             body {
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -17,6 +18,27 @@
                 margin: 0 auto;
                 padding: 20px;
                 color: #1a1a1a;
+            }
+            nav {
+                position: sticky;
+                top: 20px;
+                max-height: calc(100vh - 40px);
+                overflow-y: auto;
+                padding: 20px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                margin-bottom: 30px;
+            }
+            nav ul {
+                list-style: none;
+                padding: 0;
+            }
+            nav li {
+                margin: 8px 0;
+            }
+            .section {
+                margin: 40px 0;
+                scroll-margin-top: 20px;
             }
             pre {
                 background-color: #f6f8fa;
@@ -54,7 +76,7 @@
           "@context": "https://schema.org",
           "@type": "TechArticle",
           "headline": "Effect-TS Documentation",
-          "description": "Comprehensive guide for the Effect-TS library",
+          "description": "Comprehensive guide for the Effect-TS library. Learn about error handling, concurrency, resource management, and more.",
           "author": {
             "@type": "Organization",
             "name": "Effect-TS"
@@ -64,12 +86,139 @@
             "name": "Effect-TS"
           },
           "url": "https://charlee-dev.github.io/effect-docs/",
-          "inLanguage": "en"
+          "inLanguage": "en",
+          "articleSection": ["---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---","---"],
+          "datePublished": "2025-02-15",
+          "dateModified": "2025-02-15"
         }
         </script>
     </head>
     <body>
-        <hr>
+        <nav>
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#section-0">---</a></li>
+<li><a href="#section-1">---</a></li>
+<li><a href="#section-2">---</a></li>
+<li><a href="#section-3">---</a></li>
+<li><a href="#section-4">---</a></li>
+<li><a href="#section-5">---</a></li>
+<li><a href="#section-6">---</a></li>
+<li><a href="#section-7">---</a></li>
+<li><a href="#section-8">---</a></li>
+<li><a href="#section-9">---</a></li>
+<li><a href="#section-10">---</a></li>
+<li><a href="#section-11">---</a></li>
+<li><a href="#section-12">---</a></li>
+<li><a href="#section-13">---</a></li>
+<li><a href="#section-14">---</a></li>
+<li><a href="#section-15">---</a></li>
+<li><a href="#section-16">---</a></li>
+<li><a href="#section-17">---</a></li>
+<li><a href="#section-18">---</a></li>
+<li><a href="#section-19">---</a></li>
+<li><a href="#section-20">---</a></li>
+<li><a href="#section-21">---</a></li>
+<li><a href="#section-22">---</a></li>
+<li><a href="#section-23">---</a></li>
+<li><a href="#section-24">---</a></li>
+<li><a href="#section-25">---</a></li>
+<li><a href="#section-26">---</a></li>
+<li><a href="#section-27">---</a></li>
+<li><a href="#section-28">---</a></li>
+<li><a href="#section-29">---</a></li>
+<li><a href="#section-30">---</a></li>
+<li><a href="#section-31">---</a></li>
+<li><a href="#section-32">---</a></li>
+<li><a href="#section-33">---</a></li>
+<li><a href="#section-34">---</a></li>
+<li><a href="#section-35">---</a></li>
+<li><a href="#section-36">---</a></li>
+<li><a href="#section-37">---</a></li>
+<li><a href="#section-38">---</a></li>
+<li><a href="#section-39">---</a></li>
+<li><a href="#section-40">---</a></li>
+<li><a href="#section-41">---</a></li>
+<li><a href="#section-42">---</a></li>
+<li><a href="#section-43">---</a></li>
+<li><a href="#section-44">---</a></li>
+<li><a href="#section-45">---</a></li>
+<li><a href="#section-46">---</a></li>
+<li><a href="#section-47">---</a></li>
+<li><a href="#section-48">---</a></li>
+<li><a href="#section-49">---</a></li>
+<li><a href="#section-50">---</a></li>
+<li><a href="#section-51">---</a></li>
+<li><a href="#section-52">---</a></li>
+<li><a href="#section-53">---</a></li>
+<li><a href="#section-54">---</a></li>
+<li><a href="#section-55">---</a></li>
+<li><a href="#section-56">---</a></li>
+<li><a href="#section-57">---</a></li>
+<li><a href="#section-58">---</a></li>
+<li><a href="#section-59">---</a></li>
+<li><a href="#section-60">---</a></li>
+<li><a href="#section-61">---</a></li>
+<li><a href="#section-62">---</a></li>
+<li><a href="#section-63">---</a></li>
+<li><a href="#section-64">---</a></li>
+<li><a href="#section-65">---</a></li>
+<li><a href="#section-66">---</a></li>
+<li><a href="#section-67">---</a></li>
+<li><a href="#section-68">---</a></li>
+<li><a href="#section-69">---</a></li>
+<li><a href="#section-70">---</a></li>
+<li><a href="#section-71">---</a></li>
+<li><a href="#section-72">---</a></li>
+<li><a href="#section-73">---</a></li>
+<li><a href="#section-74">---</a></li>
+<li><a href="#section-75">---</a></li>
+<li><a href="#section-76">---</a></li>
+<li><a href="#section-77">---</a></li>
+<li><a href="#section-78">---</a></li>
+<li><a href="#section-79">---</a></li>
+<li><a href="#section-80">---</a></li>
+<li><a href="#section-81">---</a></li>
+<li><a href="#section-82">---</a></li>
+<li><a href="#section-83">---</a></li>
+<li><a href="#section-84">---</a></li>
+<li><a href="#section-85">---</a></li>
+<li><a href="#section-86">---</a></li>
+<li><a href="#section-87">---</a></li>
+<li><a href="#section-88">---</a></li>
+<li><a href="#section-89">---</a></li>
+<li><a href="#section-90">---</a></li>
+<li><a href="#section-91">---</a></li>
+<li><a href="#section-92">---</a></li>
+<li><a href="#section-93">---</a></li>
+<li><a href="#section-94">---</a></li>
+<li><a href="#section-95">---</a></li>
+<li><a href="#section-96">---</a></li>
+<li><a href="#section-97">---</a></li>
+<li><a href="#section-98">---</a></li>
+<li><a href="#section-99">---</a></li>
+<li><a href="#section-100">---</a></li>
+<li><a href="#section-101">---</a></li>
+<li><a href="#section-102">---</a></li>
+<li><a href="#section-103">---</a></li>
+<li><a href="#section-104">---</a></li>
+<li><a href="#section-105">---</a></li>
+<li><a href="#section-106">---</a></li>
+<li><a href="#section-107">---</a></li>
+<li><a href="#section-108">---</a></li>
+<li><a href="#section-109">---</a></li>
+<li><a href="#section-110">---</a></li>
+<li><a href="#section-111">---</a></li>
+<li><a href="#section-112">---</a></li>
+<li><a href="#section-113">---</a></li>
+<li><a href="#section-114">---</a></li>
+<li><a href="#section-115">---</a></li>
+<li><a href="#section-116">---</a></li>
+            </ul>
+        </nav>
+        
+            <section id="section-0" class="section">
+                <hr>
 <h2>title: API Reference
 description: API docs covering tools, integrations, and functional programming features.
 sidebar:
@@ -84,8 +233,12 @@ sidebar:
 <li><a href="https://effect-ts.github.io/effect/docs/rpc"><code>@effect/rpc</code></a> (<a href="https://github.com/Effect-TS/effect/blob/main/packages/rpc/README.md">Getting Started</a>)</li>
 <li><a href="https://effect-ts.github.io/effect/docs/typeclass"><code>@effect/typeclass</code></a> (<a href="https://github.com/Effect-TS/effect/blob/main/packages/typeclass/README.md">Getting Started</a>)</li>
 </ul>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-1" class="section">
+                <hr>
 <h2>title: Coming From ZIO
 description: Key differences between Effect and ZIO.
 sidebar:
@@ -162,8 +315,12 @@ const ab: A | B = {
 <p>In Effect, there are no predefined type aliases such as <code>UIO</code>, <code>URIO</code>, <code>RIO</code>, <code>Task</code>, or <code>IO</code> like in ZIO.</p>
 <p>The reason for this is that type aliases are lost as soon as you compose them, which renders them somewhat useless unless you maintain <strong>multiple</strong> signatures for <strong>every</strong> function. In Effect, we have chosen not to go down this path. Instead, we utilize the <code>never</code> type to indicate unused types.</p>
 <p>It&#39;s worth mentioning that the perception of type aliases being quicker to understand is often just an illusion. In Effect, the explicit notation <code>Effect&lt;A&gt;</code> clearly communicates that only type <code>A</code> is being used. On the other hand, when using a type alias like <code>RIO&lt;R, A&gt;</code>, questions arise about the type <code>E</code>. Is it <code>unknown</code>? <code>never</code>? Remembering such details becomes challenging.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-2" class="section">
+                <hr>
 <h2>title: Effect vs fp-ts
 description: Comparison of Effect and fp-ts, covering features like typed services, resource management, concurrency, and stream processing.
 sidebar:
@@ -386,8 +543,12 @@ It also supports scenarios where a client might use Micro while a server uses th
 </ul>
 <h3>Stream Processing</h3>
 <p>The Effect ecosystem provides built-in support for stream processing, enabling you to work with streams of data. Stream processing is a powerful concept that allows you to efficiently process and transform continuous streams of data in a reactive and asynchronous manner. However, fp-ts does not have this feature built-in and relies on external libraries like RxJS to handle stream processing.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-3" class="section">
+                <hr>
 <h2>title: Effect vs Promise
 description: Comparison of Effect and Promise, covering features like type safety, concurrency, and error handling.
 sidebar:
@@ -1043,8 +1204,12 @@ long running task done
 { r1: &#39;task 2&#39;, r2: &#39;task 3&#39;, r0: &#39;long running promise&#39; }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-4" class="section">
+                <hr>
 <h2>title: Myths About Effect
 description: Debunking common misconceptions about Effect&#39;s performance, complexity, and use cases.
 sidebar:
@@ -1121,8 +1286,12 @@ const result = Effect.runSync(
 <p>TypeScript is an amazing language to write full stack code with deep roots in the JS ecosystem and wide compatibility of tools, it is an industrial language adopted by many large scale companies.</p>
 <p>The fact that something like Effect is possible within the language and the fact that the language supports things such as generators that allows for imperative programming with custom types such as Effect makes TypeScript a unique language.</p>
 <p>In fact even in functional languages such as Scala the interop with effect systems is less optimal than it is in TypeScript, to the point that effect system authors have expressed wish for their language to support as much as TypeScript supports.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-5" class="section">
+                <hr>
 <h2>title: Batching
 description: Optimize performance by batching requests and reducing redundant API calls, enhancing efficiency in data fetching and processing.
 sidebar:
@@ -2095,8 +2264,12 @@ const getTodos: Effect.Effect&lt;
 </code></pre>
 <h3>Direct Cache Application</h3>
 <p>You can also construct a cache using <code>Request.makeCache</code> and apply it directly to a specific program using <code>Effect.withRequestCache</code>. This method ensures that all requests originating from the specified program are managed through the custom cache, provided that caching is enabled.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-6" class="section">
+                <hr>
 <h2>title: Equivalence
 description: Define and customize equivalence relations for TypeScript values.
 sidebar:
@@ -2183,8 +2356,12 @@ console.log(equivalence({ id: 1, name: &quot;Alice&quot; }, { id: 1, name: &quot
 <li>The existing <code>Equivalence</code> you want to use as a base (<code>Equivalence.number</code> in this case, for comparing numbers).</li>
 <li>A function that extracts the value used for the equivalence check from your data structure (<code>(user: User) =&gt; user.id</code> in this case).</li>
 </ol>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-7" class="section">
+                <hr>
 <h2>title: Order
 description: Compare, sort, and manage value ordering with customizable tools for TypeScript.
 sidebar:
@@ -2480,8 +2657,12 @@ console.log(betweenNumbers(10))
 console.log(betweenNumbers(40))
 // Output: false
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-8" class="section">
+                <hr>
 <h2>title: Cache
 description: Optimize performance with cache for concurrent, compositional, and efficient value retrieval.
 sidebar:
@@ -2612,8 +2793,12 @@ Number of cache misses: 1
 <td>Evicts all values from the cache.</td>
 </tr>
 </tbody></table>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-9" class="section">
+                <hr>
 <h2>title: Caching Effects
 description: Efficiently manage caching and memoization of effects with reusable tools.
 sidebar:
@@ -2810,8 +2995,12 @@ expensive task...
 result 2
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-10" class="section">
+                <hr>
 <h2>title: Branded Types
 description: Use branded types to enforce type safety and refine data in TypeScript.
 sidebar:
@@ -3135,8 +3324,12 @@ const bad1: PositiveInt = PositiveInt(-5)
 // throws [ { message: &#39;Expected 3.14 to be an integer&#39; } ]
 const bad2: PositiveInt = PositiveInt(3.14)
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-11" class="section">
+                <hr>
 <h2>title: Simplifying Excessive Nesting
 description: Simplify nested code with Do simulation and generators.
 sidebar:
@@ -3303,8 +3496,12 @@ some task
 </code></pre>
 <p>Within the generator, we use <code>yield*</code> to invoke effects and bind their results to variables. This eliminates the nesting and provides a more readable and sequential code structure.</p>
 <p>The generator style in Effect uses a more linear and sequential flow of execution, resembling traditional imperative programming languages. This makes the code easier to read and understand, especially for developers who are more familiar with imperative programming paradigms.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-12" class="section">
+                <hr>
 <h2>title: Dual APIs
 description: Explore data-first and data-last variants of dual APIs in the Effect ecosystem.
 sidebar:
@@ -3355,9 +3552,11 @@ These two ways are called the &quot;data-last&quot; and &quot;data-first&quot; v
   your coding style and enhances readability for your team.
 </Aside>
 
+            </section>
+        
 
-<hr>
-<hr>
+            <section id="section-13" class="section">
+                <hr>
 <h2>title: Guidelines
 description: Best practices for running Effect applications and ensuring safe, explicit coding styles.
 sidebar:
@@ -3447,8 +3646,12 @@ Application is about to exit!
 </li>
 </ul>
 <p>Avoiding tacit usage is a simple precaution that makes your code more reliable.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-14" class="section">
+                <hr>
 <h2>title: Pattern Matching
 description: Simplify complex branching with pattern matching using the Match module.
 sidebar:
@@ -3806,8 +4009,12 @@ console.log(getRole({ role: &quot;admin&quot; }))
 console.log(getRole({ role: &quot;viewer&quot; }))
 // Output: { _id: &#39;Either&#39;, _tag: &#39;Left&#39;, left: { role: &#39;viewer&#39; } }
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-15" class="section">
+                <hr>
 <h2>title: Basic Concurrency
 description: Manage and control effect execution with concurrency, interruptions, and racing.
 sidebar:
@@ -4582,8 +4789,12 @@ task1 exited with {
 task2 interrupted
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-16" class="section">
+                <hr>
 <h2>title: Deferred
 description: Master asynchronous coordination with Deferred, a one-time variable for managing effect synchronization and communication.
 sidebar:
@@ -4802,8 +5013,12 @@ Got the value from the Deferred
 [ true, &#39;hello world&#39; ]
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-17" class="section">
+                <hr>
 <h2>title: Fibers
 description: Understand fibers in Effect, lightweight virtual threads enabling powerful concurrency, structured lifecycles, and efficient resource management for responsive applications.
 sidebar:
@@ -5351,8 +5566,12 @@ SubscriptionRef changed to 1
 SubscriptionRef changed to 2
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-18" class="section">
+                <hr>
 <h2>title: Latch
 description: A Latch synchronizes fibers by allowing them to wait until a specific event occurs, controlling access based on its open or closed state.
 sidebar:
@@ -5435,8 +5654,12 @@ Effect.runFork(program)
 <li>Use a <strong>latch</strong> if you&#39;re gating a set of fibers on a specific event (&quot;Wait here until this becomes true&quot;).</li>
 <li>Use a <strong>semaphore (with one lock)</strong> if you need to ensure only one fiber at a time is in a critical section or using a shared resource.</li>
 </ul>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-19" class="section">
+                <hr>
 <h2>title: PubSub
 description: Effortless message broadcasting and asynchronous communication with PubSub in Effect.
 sidebar:
@@ -5585,8 +5808,12 @@ interface PubSub&lt;A&gt; extends Queue.Enqueue&lt;A&gt; {}
 </code></pre>
 <p>Here, the <code>Enqueue</code> type refers to a queue that only accepts enqueues (or writes). Any value enqueued here is published to the pubsub, and operations like shutdown will also affect the pubsub.</p>
 <p>This design makes <code>PubSub</code> highly flexible, letting you use it anywhere you need a <code>Enqueue</code> that only accepts published values.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-20" class="section">
+                <hr>
 <h2>title: Queue
 description: Learn how to use Effect&#39;s Queue for lightweight, type-safe, and asynchronous workflows with built-in back-pressure.
 sidebar:
@@ -5967,8 +6194,12 @@ Output:
 2
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-21" class="section">
+                <hr>
 <h2>title: Semaphore
 description: Learn to use semaphores in Effect for precise control of concurrency, managing resource access, and coordinating asynchronous tasks effectively.
 sidebar:
@@ -6056,9 +6287,11 @@ timestamp=... level=INFO fiber=#5 message=&quot;process: 5&quot; elapsed=8034ms
   task, even if the task fails or is interrupted.
 </Aside>
 
+            </section>
+        
 
-<hr>
-<hr>
+            <section id="section-22" class="section">
+                <hr>
 <h2>title: Configuration
 description: Efficiently manage application configurations with built-in types, flexible providers, and advanced features like defaults, validation, and redaction.
 sidebar:
@@ -6623,8 +6856,12 @@ Effect.runPromise(program)
 <pre><code class="language-ansi">Console output: Secret(&lt;redacted&gt;)
 Actual value: my-api-key
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-23" class="section">
+                <hr>
 <h2>title: BigDecimal
 description: The BigDecimal data type represents arbitrary-precision decimal numbers.
 sidebar:
@@ -6978,8 +7215,12 @@ const dec2 = BigDecimal.make(1050n, 3)
 console.log(BigDecimal.equals(dec1, dec2))
 // Output: true
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-24" class="section">
+                <hr>
 <h2>title: Cause
 description: Comprehensive error analysis with Cause in Effect - track failures, defects, and interruptions with precise details.
 sidebar:
@@ -7206,8 +7447,12 @@ Output:
 { _id: &#39;Chunk&#39;, values: [] }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-25" class="section">
+                <hr>
 <h2>title: Chunk
 description: Learn about Chunk, a high-performance immutable data structure in Effect, offering efficient operations like concatenation, slicing, and conversions.
 sidebar:
@@ -7336,8 +7581,12 @@ declare const chunk: Chunk.Chunk&lt;number&gt;
 //      ▼
 const array = Chunk.toReadonlyArray(chunk)
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-26" class="section">
+                <hr>
 <h2>title: Data
 description: Define immutable data structures, ensure equality, and manage errors seamlessly with Effect&#39;s Data module.
 sidebar:
@@ -7897,8 +8146,12 @@ Error: An error has occurred
           at ...
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-27" class="section">
+                <hr>
 <h2>title: DateTime
 description: Work with precise points in time using Effect&#39;s DateTime, supporting creation, comparison, and arithmetic operations for efficient time handling.
 sidebar:
@@ -8635,8 +8888,12 @@ Example Output:
 DateTime.Zoned(2025-01-06T18:36:38.573+00:00[Europe/London])
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-28" class="section">
+                <hr>
 <h2>title: Duration
 description: Work with precise time spans using Effect&#39;s Duration, supporting creation, comparison, and arithmetic operations for efficient time handling.
 sidebar:
@@ -8786,8 +9043,12 @@ Output:
 Duration(1m)
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-29" class="section">
+                <hr>
 <h2>title: Either
 description: Represent exclusive values as Left or Right with the Either data type, enabling precise control flow in computations.
 sidebar:
@@ -9101,8 +9362,12 @@ Retrieving name...
 */
 </code></pre>
 <p>The use of <code>console.log</code> in these example is for demonstration purposes only. When using <code>Either.gen</code>, avoid including side effects in your generator functions, as <code>Either</code> should remain a pure data structure.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-30" class="section">
+                <hr>
 <h2>title: Exit
 description: Represent the result of an Effect workflow with Exit, capturing success values or failure causes.
 sidebar:
@@ -9187,8 +9452,12 @@ console.log(
 <li><code>Effect.succeed</code> is essentially the same as <code>Exit.succeed</code>.</li>
 <li><code>Effect.fail</code> is the same as <code>Exit.fail</code>.</li>
 </ul>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-31" class="section">
+                <hr>
 <h2>title: Option
 description: Represent optional values with Option, supporting presence (Some) or absence (None) and seamless operations like mapping, combining, and pattern matching.
 sidebar:
@@ -9767,8 +10036,12 @@ Output:
 ]
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-32" class="section">
+                <hr>
 <h2>title: Redacted
 description: Securely handle sensitive data with the Redacted module, preventing accidental exposure in logs while supporting safe value access and comparison.
 sidebar:
@@ -9839,8 +10112,12 @@ console.log(equivalence(API_KEY1, API_KEY2))
 console.log(equivalence(API_KEY1, API_KEY3))
 // Output: true
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-33" class="section">
+                <hr>
 <h2>title: Error Accumulation
 description: Learn to manage errors effectively in Effect workflows with tools for sequential execution, error accumulation, and result partitioning.
 sidebar:
@@ -10006,8 +10283,12 @@ Output:
 */
 </code></pre>
 <p>This operator is an unexceptional effect, meaning the error channel type is <code>never</code>. Failures are collected without stopping the effect, so the entire operation completes and returns both errors and successes.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-34" class="section">
+                <hr>
 <h2>title: Error Channel Operations
 description: Explore operations on the error channel in Effect, including error mapping, filtering, inspecting, merging, and flipping channels.
 sidebar:
@@ -10376,8 +10657,12 @@ const program = Effect.fail(&quot;Oh uh!&quot;).pipe(Effect.as(2))
 //      ▼
 const flipped = Effect.flip(program)
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-35" class="section">
+                <hr>
 <h2>title: Expected Errors
 description: Learn how Effect manages expected errors with precise error tracking, short-circuiting, and powerful recovery techniques.
 sidebar:
@@ -11105,9 +11390,11 @@ and the corresponding value is the error handler function to be executed when th
   field is used to identify and match errors.
 </Aside>
 
+            </section>
+        
 
-<hr>
-<hr>
+            <section id="section-36" class="section">
+                <hr>
 <h2>title: Fallback
 description: Learn techniques to handle failures and implement fallback mechanisms in Effect programs.
 sidebar:
@@ -11264,8 +11551,12 @@ Config for node3 found
 { host: &#39;node3.example.com&#39;, port: 8080, apiKey: &#39;12345-abcde&#39; }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-37" class="section">
+                <hr>
 <h2>title: Matching
 description: Learn to handle success and failure cases in Effect programs with tools for pattern matching, value ignoring, side effects, and precise failure analysis.
 sidebar:
@@ -11440,8 +11731,12 @@ const program = Effect.matchCauseEffect(task, {
 Effect.runPromise(program)
 // Output: &quot;Die: Uh oh!&quot;
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-38" class="section">
+                <hr>
 <h2>title: Parallel and Sequential Errors
 description: Handle concurrent and sequential errors in Effect programs, capturing multiple failures and ensuring robust error management in concurrent and sequential workflows.
 sidebar:
@@ -11558,8 +11853,12 @@ Output:
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-39" class="section">
+                <hr>
 <h2>title: Retrying
 description: Enhance resilience with Effect&#39;s retrying strategies, enabling robust handling of transient failures with customizable retry policies and fallback mechanisms.
 sidebar:
@@ -11715,8 +12014,12 @@ orElse
 default value
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-40" class="section">
+                <hr>
 <h2>title: Sandboxing
 description: Master error handling in Effect with sandboxing, enabling detailed inspection and recovery from failures, defects, and interruptions.
 sidebar:
@@ -11769,8 +12072,12 @@ Caught a defect: Oh uh!
 fallback result on failure
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-41" class="section">
+                <hr>
 <h2>title: Timing Out
 description: Set time limits on operations with Effect, ensuring tasks complete within specified durations and customizing behavior for timeouts.
 sidebar:
@@ -12088,8 +12395,12 @@ Start processing...
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-42" class="section">
+                <hr>
 <h2>title: Two Types of Errors
 description: Learn how Effect differentiates between expected and unexpected errors to enhance error tracking and recovery.
 sidebar:
@@ -12120,8 +12431,12 @@ Unlike expected errors, which are considered part of a program&#39;s domain and 
 unexpected errors resemble unchecked exceptions and lie outside the expected behavior of the program.</p>
 <p>Since these errors are not expected, Effect <strong>does not track</strong> them at the type level.
 However, the Effect runtime does keep track of these errors and provides several methods to aid in recovering from unexpected errors.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-43" class="section">
+                <hr>
 <h2>title: Unexpected Errors
 description: Understand how Effect handles unexpected errors with tools to manage defects, terminate execution, and selectively recover from critical failures.
 sidebar:
@@ -12392,9 +12707,11 @@ Output:
   such as dynamically loaded plugins, controlled recovery might be needed.
 </Aside>
 
+            </section>
+        
 
-<hr>
-<hr>
+            <section id="section-44" class="section">
+                <hr>
 <h2>title: Yieldable Errors
 description: Explore yieldable errors in Effect programming for seamless error handling in generator functions using custom and tagged error constructors.
 sidebar:
@@ -12460,8 +12777,12 @@ Example Output (n &lt; 0.2):
 Foo error: Oh no!
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-45" class="section">
+                <hr>
 <h2>title: Building Pipelines
 description: Learn to create modular, readable pipelines for composing and sequencing operations in Effect, enabling clear and efficient data transformations.
 sidebar:
@@ -12941,8 +13262,12 @@ const program = Effect.all([
 <td><code>Effect&lt;[A, B, ...], E, R&gt;</code></td>
 </tr>
 </tbody></table>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-46" class="section">
+                <hr>
 <h2>title: Control Flow Operators
 description: Learn to control execution flow in Effect programs using advanced constructs for conditional branching, iteration, and combining effects seamlessly.
 sidebar:
@@ -13499,8 +13824,12 @@ Task3
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-47" class="section">
+                <hr>
 <h2>title: Create Effect App
 description: Quickly set up a new Effect application with a customizable template or example, streamlining your development start.
 sidebar:
@@ -13589,8 +13918,12 @@ create-effect-app
 <td>Sets up Effect&#39;s recommended GitHub Action workflows for automation.</td>
 </tr>
 </tbody></table>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-48" class="section">
+                <hr>
 <h2>title: Creating Effects
 description: Learn to create and manage effects for structured handling of success, failure, and side effects in synchronous and asynchronous workflows.
 sidebar:
@@ -14158,8 +14491,12 @@ const withSuspend = (a: number, b: number) =&gt;
 </tr>
 </tbody></table>
 <p>For the complete list of constructors, visit the <a href="https://effect-ts.github.io/effect/effect/Effect.ts.html#constructors">Effect Constructors Documentation</a>.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-49" class="section">
+                <hr>
 <h2>title: Importing Effect
 description: Get started with Effect by installing the package and importing essential modules and functions for building type-safe, modular applications.
 sidebar:
@@ -14243,8 +14580,12 @@ Named imports may generate tree shaking issues when a bundler doesn&#39;t suppor
 <p>In the upcoming guides, we will explore some of these essential functions, specifically those for creating and running <code>Effect</code>s and building pipelines.</p>
 <p>But before we dive into those, let&#39;s start from the very heart of Effect: understanding the <code>Effect</code> type. This will lay the groundwork for your understanding of how Effect brings composability, type safety, and error handling into your applications.</p>
 <p>So, let&#39;s take the first step and explore the fundamental concepts of the <a href="/docs/getting-started/the-effect-type/">The Effect Type</a>.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-50" class="section">
+                <hr>
 <h2>title: Installation
 description: Set up a new Effect project across different platforms like Node.js, Deno, Bun, and Vite + React with step-by-step installation guides.
 sidebar:
@@ -14698,8 +15039,12 @@ export default App
 
 <p>Then, press <strong>o</strong> to open the application in your browser.</p>
 <p>When you click the button, you should see the counter increment. This confirms that the program is working correctly.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-51" class="section">
+                <hr>
 <h2>title: Introduction
 description: Explore Effect, a TypeScript library for building scalable, maintainable, and type-safe applications with advanced concurrency, error handling, and resource management.
 sidebar:
@@ -14750,8 +15095,12 @@ easily create complex, synchronous, and asynchronous programs.</p>
 <h2>Join our Community</h2>
 <p>If you have questions about anything related to Effect,
 you&#39;re always welcome to ask our community on <a href="https://discord.gg/effect-ts">Discord</a>.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-52" class="section">
+                <hr>
 <h2>title: Running Effects
 description: Learn how to execute effects in Effect with various functions for synchronous and asynchronous execution, including handling results and managing error outcomes.
 sidebar:
@@ -15012,8 +15361,12 @@ setTimeout(() =&gt; {
 </tr>
 </tbody></table>
 <p>You can find the complete list of <code>run*</code> functions <a href="https://effect-ts.github.io/effect/effect/Effect.ts.html#running-effects">here</a>.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-53" class="section">
+                <hr>
 <h2>title: The Effect Type
 description: Understand the Effect type in the Effect ecosystem, which models immutable, lazy workflows with type-safe success, error, and requirement handling for effectful computations.
 sidebar:
@@ -15092,8 +15445,12 @@ type E = Effect.Effect.Error&lt;typeof program&gt;
 // Extract the context type, which is SomeContext
 type R = Effect.Effect.Context&lt;typeof program&gt;
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-54" class="section">
+                <hr>
 <h2>title: Using Generators
 description: Learn how to use generators in Effect for writing effectful code, enhancing control flow, handling errors, and simplifying asynchronous operations with a syntax similar to async/await.
 sidebar:
@@ -15438,8 +15795,12 @@ const program = Effect.gen(function* () {
 })
 </code></pre>
 <p>With advances in TypeScript (v5.5+), the adapter is no longer necessary for type inference. While it remains in the codebase for backward compatibility, it is anticipated to be removed in the upcoming major release of Effect.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-55" class="section">
+                <hr>
 <h2>title: Why Effect?
 description: Discover how Effect transforms TypeScript programming by using the type system to track errors, context, and success, offering practical solutions for building reliable, maintainable applications.
 sidebar:
@@ -15493,8 +15854,12 @@ Effect&lt;number, Error, never&gt;
 <p>Learning Effect is a lot of fun. Many developers in the Effect ecosystem are using Effect to solve real problems in their day-to-day work, and also experiment with cutting edge ideas for pushing TypeScript to be the most useful language it can be.</p>
 <p>You don&#39;t have to use all aspects of Effect at once, and can start with the pieces of the ecosystem that make the most sense for the problems you are solving. Effect is a toolkit, and you can pick and choose the pieces that make the most sense for your use case. However, as more and more of your codebase is using Effect, you will probably find yourself wanting to utilize more of the ecosystem!</p>
 <p>Effect&#39;s concepts may be new to you, and might not completely make sense at first. This is totally normal. Take your time with reading the docs and try to understand the core concepts - this will really pay off later on as you get into the more advanced tooling in the Effect ecosystem. The Effect community is always happy to help you learn and grow. Feel free to hop into our <a href="https://discord.gg/effect-ts">Discord</a> or discuss on <a href="https://github.com/Effect-TS">GitHub</a>! We are open to feedback and contributions, and are always looking for ways to improve Effect.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-56" class="section">
+                <hr>
 <h2>title: Micro for Effect Users
 description: Learn about the Micro module, a lightweight alternative to Effect for reducing bundle size while maintaining compatibility and functionality for TypeScript applications.
 sidebar:
@@ -16070,8 +16435,12 @@ random number: 0.8241872233134417
 <td><code>MicroFiber</code> instead of <code>RuntimeFiber</code></td>
 </tr>
 </tbody></table>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-57" class="section">
+                <hr>
 <h2>title: Getting Started with Micro
 description: Learn how to get started with the Micro module, a lightweight alternative to Effect for reducing bundle size while maintaining essential functionality in TypeScript applications.
 sidebar:
@@ -17864,8 +18233,12 @@ Output:
 { _id: &#39;Either&#39;, _tag: &#39;Left&#39;, left: &#39;task1&#39; }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-58" class="section">
+                <hr>
 <h2>title: Logging
 description: Discover Effect&#39;s logging utilities for dynamic log levels, custom outputs, and fine-grained control over logs.
 sidebar:
@@ -18587,8 +18960,12 @@ timestamp=2025-01-09T13:50:58.655Z level=INFO fiber=#0 message=something
 [INFO] something
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-59" class="section">
+                <hr>
 <h2>title: Metrics in Effect
 description: Effect Metrics provides powerful monitoring tools, including counters, gauges, histograms, summaries, and frequencies, to track your application&#39;s performance and behavior.
 sidebar:
@@ -19123,8 +19500,12 @@ Effect.gen(function* () {
 }).pipe(Effect.tagMetrics(&quot;environment&quot;, &quot;production&quot;))
 </code></pre>
 <p>If you only want to apply tags within a specific <a href="/docs/resource-management/scope/">scope</a>, you can use <code>Effect.tagMetricsScoped</code>. This limits the tag application to metrics within that scope, allowing for more precise tagging control.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-60" class="section">
+                <hr>
 <h2>title: Supervisor
 description: Effect&#39;s Supervisor manages fiber lifecycles, enabling tracking, monitoring, and controlling fibers&#39; behavior within an application.
 sidebar:
@@ -19227,8 +19608,12 @@ number of fibers: 0
 fibonacci result: 10946
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-61" class="section">
+                <hr>
 <h2>title: Tracing in Effect
 description: Explore tracing in distributed systems to track request lifecycles across services using spans and traces for debugging and performance optimization.
 sidebar:
@@ -19921,8 +20306,12 @@ const NodeSdkLive = NodeSdk.layer(() =&gt; ({
   spanProcessor: new SentrySpanProcessor()
 }))
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-62" class="section">
+                <hr>
 <h2>title: Command
 description: Learn how to create, run, and manage commands with custom arguments, environment variables, and input/output handling in Effect.
 sidebar:
@@ -20112,8 +20501,12 @@ const program = Command.make(&quot;cat&quot;, &quot;./some-file.txt&quot;).pipe(
 
 NodeRuntime.runMain(program.pipe(Effect.provide(NodeContext.layer)))
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-63" class="section">
+                <hr>
 <h2>title: FileSystem
 description: Explore file system operations for reading, writing, and managing files and directories in Effect.
 sidebar:
@@ -20272,8 +20665,12 @@ const program = Effect.gen(function* () {
 // Provide the necessary context and run the program
 NodeRuntime.runMain(program.pipe(Effect.provide(NodeContext.layer)))
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-64" class="section">
+                <hr>
 <h2>title: Introduction to Effect Platform
 description: Build cross-platform applications with unified abstractions for Node.js, Deno, Bun, and browsers using @effect/platform.
 sidebar:
@@ -20537,8 +20934,12 @@ BunRuntime.runMain(program.pipe(Effect.provide(BunContext.layer)))
 <pre><code class="language-sh">bun index.ts
 tmp/file.txt
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-65" class="section">
+                <hr>
 <h2>title: KeyValueStore
 description: Manage key-value pairs with asynchronous, consistent storage, supporting in-memory, file system, and schema-based implementations.
 sidebar:
@@ -20705,8 +21106,12 @@ Output:
 { _id: &#39;Option&#39;, _tag: &#39;Some&#39;, value: { name: &#39;Alice&#39;, age: 30 } }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-66" class="section">
+                <hr>
 <h2>title: Path
 description: Perform file path operations such as joining, resolving, and normalizing across platforms.
 sidebar:
@@ -20804,8 +21209,12 @@ const program = Effect.gen(function* () {
 NodeRuntime.runMain(program.pipe(Effect.provide(NodeContext.layer)))
 // Output: &quot;tmp/file.txt&quot;
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-67" class="section">
+                <hr>
 <h2>title: PlatformLogger
 description: Log messages to a file using the FileSystem APIs.
 sidebar:
@@ -20871,8 +21280,12 @@ const program = Effect.log(&quot;Hello&quot;)
 // and &quot;/tmp/log.txt&quot; (logfmt)
 Effect.runFork(program.pipe(Effect.provide(LoggerLive)))
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-68" class="section">
+                <hr>
 <h2>title: Terminal
 description: Interact with standard input and output to read user input and display messages on the terminal.
 sidebar:
@@ -21019,8 +21432,12 @@ We&#39;ll tell you if your guess was too high or too low.`
 // Run the game
 NodeRuntime.runMain(game.pipe(Effect.provide(NodeTerminal.layer)))
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-69" class="section">
+                <hr>
 <h2>title: Default Services
 description: Learn about the default services in Effect, including Clock, Console, Random, ConfigProvider, and Tracer, and how they are automatically provided for your programs.
 sidebar:
@@ -21041,8 +21458,12 @@ const program = Effect.gen(function* () {
 </code></pre>
 <p>As you can observe, even if our program utilizes both <code>Clock</code> and <code>Console</code>, the <code>Requirements</code> parameter, representing the services required for the effect to execute, remains set to <code>never</code>.
 Effect takes care of handling these services seamlessly for us.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-70" class="section">
+                <hr>
 <h2>title: Layer Memoization
 description: Learn how layer memoization optimizes performance in Effect by reusing layers and controlling their instantiation.
 sidebar:
@@ -21225,8 +21646,12 @@ Output:
 timestamp=... level=INFO fiber=#0 message=initialized
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-71" class="section">
+                <hr>
 <h2>title: Managing Layers
 description: Learn how to use layers in Effect to manage service dependencies and build efficient, clean dependency graphs for your applications.
 sidebar:
@@ -22060,8 +22485,12 @@ Connecting to in-memory database
 ...
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-72" class="section">
+                <hr>
 <h2>title: Managing Services
 description: Learn how to manage reusable services in Effect, handle dependencies efficiently, and ensure clean, decoupled architecture in your applications.
 sidebar:
@@ -22487,9 +22916,11 @@ class Logger extends Context.Tag(&quot;MyLoggerService&quot;)&lt;
   construction level rather than the service level.
 </Aside>
 
+            </section>
+        
 
-<hr>
-<hr>
+            <section id="section-73" class="section">
+                <hr>
 <h2>title: Patterns
 description: Learn how to handle sequential operations in Effect, ensuring either full success or rollback on failure, with efficient error handling and resource management.
 sidebar:
@@ -22917,8 +23348,12 @@ Effect.runPromise(Effect.either(runnable)).then(console.log)
 }
 </code></pre>
 <p>As expected, once the <code>ElasticSearch</code> index creation fails, there is a rollback that deletes the <code>S3</code> bucket. The result is a failure with <code>left(new ElasticSearchError())</code>.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-74" class="section">
+                <hr>
 <h2>title: Scope
 description: Learn how Effect simplifies resource management with Scopes, ensuring efficient cleanup and safe resource handling in long-running applications.
 sidebar:
@@ -23659,8 +24094,12 @@ content is lorem ipsum
 Resource released
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-75" class="section">
+                <hr>
 <h2>title: Introduction to Runtime
 description: Learn how Effect&#39;s runtime system executes concurrent programs, manages resources, and handles configuration with flexibility and efficiency.
 sidebar:
@@ -23935,8 +24374,12 @@ async function main() {
   await runtime.dispose()
 }
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-76" class="section">
+                <hr>
 <h2>title: Built-In Schedules
 description: Explore built-in scheduling patterns in Effect for efficient timed repetitions and delays.
 sidebar:
@@ -24317,8 +24760,12 @@ Output:
 ...
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-77" class="section">
+                <hr>
 <h2>title: Cron
 description: Explore cron scheduling in Effect for executing actions at specific times and intervals.
 sidebar:
@@ -24527,9 +24974,11 @@ Output:
   controlling the execution in test environments.
 </Aside>
 
+            </section>
+        
 
-<hr>
-<hr>
+            <section id="section-78" class="section">
+                <hr>
 <h2>title: Examples
 description: Explore practical examples for scheduling, retries, timeouts, and periodic task execution in Effect.
 sidebar:
@@ -24720,8 +25169,12 @@ action...
 done
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-79" class="section">
+                <hr>
 <h2>title: Introduction
 description: Learn the fundamentals of scheduling in Effect, including composable recurrence patterns and handling retries and repetitions.
 sidebar:
@@ -24743,8 +25196,12 @@ Schedule&lt;Out, In, Requirements&gt;
 <p>When using schedules for retrying or repetition, each interval&#39;s starting boundary determines when the effect will be executed again. For example, in retrying, if an error occurs, the schedule defines when the effect should be retried.</p>
 <h2>Composability of Schedules</h2>
 <p>Schedules are composable, meaning you can combine simple schedules to create more complex recurrence patterns. Operators like <code>Schedule.union</code> or <code>Schedule.intersect</code> allow you to build sophisticated schedules by combining and modifying existing ones. This flexibility enables you to tailor the scheduling behavior to meet specific requirements.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-80" class="section">
+                <hr>
 <h2>title: Repetition
 description: Explore repetition in Effect for executing actions multiple times with control over retries, failures, and conditions.
 sidebar:
@@ -24929,9 +25386,11 @@ Action called 3 time(s)
   success outcomes.
 </Aside>
 
+            </section>
+        
 
-<hr>
-<hr>
+            <section id="section-81" class="section">
+                <hr>
 <h2>title: Schedule Combinators
 description: Learn how to combine and customize schedules in Effect to create complex recurrence patterns, including union, intersection, sequencing, and more.
 sidebar:
@@ -25334,8 +25793,12 @@ Schedule Output: 2
 */
 </code></pre>
 <p><code>Schedule.tapOutput</code> runs an effect before each recurrence, using the schedule&#39;s current output as input. This can be useful for logging, debugging, or triggering side effects.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-82" class="section">
+                <hr>
 <h2>title: Advanced Usage
 description: Learn advanced techniques for defining and extending data schemas, including recursive and mutually recursive types, optional fields, branded types, and schema transformations.
 sidebar:
@@ -27515,8 +27978,12 @@ const Category = Schema.Struct({
   )
 })
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-83" class="section">
+                <hr>
 <h2>title: Schema Annotations
 description: Learn how to enhance schemas with annotations for better customization, error handling, documentation, and concurrency control in your Effect-based applications.
 sidebar:
@@ -27860,8 +28327,12 @@ console.log(isDeprecated(Schema.String))
 console.log(isDeprecated(MyString))
 // Output: true
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-84" class="section">
+                <hr>
 <h2>title: Schema to Arbitrary
 description: Generate random test data that adheres to schema constraints using Arbitrary, with options for transformations, filters, and custom generation.
 sidebar:
@@ -28058,8 +28529,12 @@ Example Output:
 ]
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-85" class="section">
+                <hr>
 <h2>title: Basic Usage
 description: Learn to define and work with basic schemas, including primitives, literals, unions, and structs, for effective data validation and transformation.
 sidebar:
@@ -29470,8 +29945,12 @@ const keys = Schema.keyof(schema)
 //     ▼
 type Type = typeof keys.Type
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-86" class="section">
+                <hr>
 <h2>title: Class APIs
 description: Learn to define and extend schemas using classes, incorporating validation, custom logic, and advanced features like equality checks and transformations.
 sidebar:
@@ -30189,8 +30668,12 @@ PersonWithTransformFrom {
 </ul>
 </li>
 </ol>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-87" class="section">
+                <hr>
 <h2>title: Default Constructors
 description: Create values that conform to schemas effortlessly using default constructors for structs, records, filters, and branded types, with options for validation, default values, and lazy evaluation.
 sidebar:
@@ -30530,8 +31013,12 @@ Example Output:
 Person { age: 0, timestamp: 1714400867215, name: &#39;name2&#39; }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-88" class="section">
+                <hr>
 <h2>title: Effect Data Types
 description: Transform and manage various data types with schemas for enhanced JSON serialization, including support for options, eithers, sets, maps, durations, and sensitive redacted data.
 sidebar:
@@ -32536,8 +33023,12 @@ ParseError: Expected Redacted(&lt;redacted&gt;), actual null
 */
 </code></pre>
 <p>It&#39;s important to note that when successfully decoding a <code>Redacted</code>, the output is intentionally obscured (<code>&lt;redacted&gt;</code>) to prevent the actual secret from being revealed in logs or console outputs.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-89" class="section">
+                <hr>
 <h2>title: Schema to Equivalence
 description: Generate and customize equivalence checks for data structures based on schema definitions.
 sidebar:
@@ -32611,8 +33102,12 @@ console.log(customEquivalence(&quot;aaa&quot;, &quot;abb&quot;))
 console.log(customEquivalence(&quot;aaa&quot;, &quot;bba&quot;))
 // Output: false (strings start with different characters)
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-90" class="section">
+                <hr>
 <h2>title: Error Formatters
 description: Format and customize error messages during schema decoding and encoding using TreeFormatter or ArrayFormatter.
 sidebar:
@@ -32849,8 +33344,12 @@ Decoding failed:
 <p>If you are working with React and need form validation, <code>@hookform/resolvers</code> offers an adapter for <code>effect/Schema</code>, which can be integrated with React Hook Form for enhanced form validation processes. This integration allows you to leverage the powerful features of <code>effect/Schema</code> within your React applications.</p>
 <p>For more detailed instructions and examples on how to integrate <code>effect/Schema</code> with React Hook Form using <code>@hookform/resolvers</code>, you can visit the official npm package page:
 <a href="https://www.npmjs.com/package/@hookform/resolvers#effect-ts">React Hook Form Resolvers</a></p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-91" class="section">
+                <hr>
 <h2>title: Error Messages
 description: Customize and enhance error messages for schema decoding with default, refined, and custom messages.
 sidebar:
@@ -33486,8 +33985,12 @@ ParseError: readonly [number, number]
    └─ Y coordinate is required
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-92" class="section">
+                <hr>
 <h2>title: Filters
 description: Define custom validation logic with filters to enhance data validation beyond basic type checks.
 sidebar:
@@ -34049,8 +34552,12 @@ Schema.Duration.pipe(Schema.lessThanOrEqualToDuration(&quot;5 seconds&quot;))
 // Specifies a duration between 5 seconds and 10 seconds, inclusive
 Schema.Duration.pipe(Schema.betweenDuration(&quot;5 seconds&quot;, &quot;10 seconds&quot;))
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-93" class="section">
+                <hr>
 <h2>title: Getting Started
 description: Learn how to define schemas, extract types, and handle decoding and encoding.
 sidebar:
@@ -34894,8 +35401,12 @@ try {
 <p>The primary goal of these schemas is to ensure that domain objects can be easily serialized (&quot;encoded&quot;) and deserialized (&quot;decoded&quot;) for transmission over network connections, thus facilitating their transfer between different parts of an application or across different applications.</p>
 <h3>Rationale</h3>
 <p>While JSON&#39;s ubiquity justifies its primary consideration in naming, the conventions also accommodate serialization for other types of transport. For instance, converting a <code>Date</code> to a string is a universally useful method for various communication protocols, not just JSON. Thus, the selected naming conventions serve as sensible defaults that prioritize clarity and ease of use, facilitating the serialization and deserialization processes across diverse technological environments.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-94" class="section">
+                <hr>
 <h2>title: Introduction to Effect Schema
 description: &quot;Introduction to <code>effect/Schema</code>, a module for defining, validating, and transforming data schemas.&quot;
 sidebar:
@@ -35129,9 +35640,11 @@ Schema&lt;Type, Encoded, Requirements&gt;
   return the original value.
 </Aside>
 
+            </section>
+        
 
-<hr>
-<hr>
+            <section id="section-95" class="section">
+                <hr>
 <h2>title: Schema to JSON Schema
 description: Convert schema definitions into JSON Schema for data validation and interoperability.
 sidebar:
@@ -35984,8 +36497,12 @@ Output:
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-96" class="section">
+                <hr>
 <h2>title: Schema to Pretty Printer
 description: Generate formatted string representations of values based on schemas.
 sidebar:
@@ -36028,8 +36545,12 @@ const customPrettyPrinter = Pretty.make(schema)
 console.log(customPrettyPrinter(1))
 // Output: &quot;my format: 1&quot;
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-97" class="section">
+                <hr>
 <h2>title: Schema Projections
 description: Create new schemas by extracting and customizing the Type or Encoded components of existing schemas.
 sidebar:
@@ -36109,8 +36630,12 @@ const EncodedBoundSchema2 = Schema.Struct({
   foo: Schema.String.pipe(Schema.minLength(3))
 })
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-98" class="section">
+                <hr>
 <h2>title: Schema to Standard Schema
 description: Generate Standard Schema V1.
 sidebar:
@@ -36226,8 +36751,12 @@ Output:
 { issues: [ { message: &#39;Error: Boom!&#39; } ] }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-99" class="section">
+                <hr>
 <h2>title: Schema Transformations
 description: Transform and manipulate data with schema-based transformations, including type conversions, validations, and custom processing.
 sidebar:
@@ -37348,8 +37877,12 @@ console.log(decode(&quot;0&quot;))
 console.log(decode(&quot;3&quot;))
 // Output: { _id: &#39;BigDecimal&#39;, value: &#39;1&#39;, scale: 0 }
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-100" class="section">
+                <hr>
 <h2>title: Sink Concurrency
 excerpt: Learn how to enhance performance with concurrent sink operations, such as combining results or racing to capture the first completion.
 sidebar:
@@ -37428,8 +37961,12 @@ sink 2: 5
 1
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-101" class="section">
+                <hr>
 <h2>title: Creating Sinks
 description: Discover how to create and use various sinks for processing streams, including counting, summing, collecting, folding, and handling success or failure.
 sidebar:
@@ -37809,8 +38346,12 @@ Output:
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-102" class="section">
+                <hr>
 <h2>title: Introduction
 description: Learn the role of Sink in stream processing, handling element consumption, error management, result production, and leftover elements.
 sidebar:
@@ -37874,8 +38415,12 @@ Sink&lt;Chunk&lt;number&gt;, number, number, never, never&gt;
 <li><code>never</code> (first occurrence): Indicates that this sink does not produce any errors.</li>
 <li><code>never</code> (second occurrence): Shows that no dependencies are required to operate this sink.</li>
 </ul>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-103" class="section">
+                <hr>
 <h2>title: Leftovers
 description: Learn how to handle unconsumed elements in streams, collecting or ignoring leftovers for efficient data processing.
 sidebar:
@@ -37931,8 +38476,12 @@ Output:
 [ { _id: &#39;Chunk&#39;, values: [ 1, 2, 3 ] }, { _id: &#39;Chunk&#39;, values: [] } ]
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-104" class="section">
+                <hr>
 <h2>title: Sink Operations
 description: Explore operations to transform, filter, and adapt sinks, enabling custom input-output handling and element filtering in stream processing.
 sidebar:
@@ -38012,8 +38561,12 @@ Output:
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-105" class="section">
+                <hr>
 <h2>title: Ref
 description: Learn how to manage state in concurrent applications using Effect&#39;s Ref data type. Master mutable references for safe, controlled state updates across fibers.
 sidebar:
@@ -38327,8 +38880,12 @@ Please enter a name or `q` to exit: q
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-106" class="section">
+                <hr>
 <h2>title: SubscriptionRef
 description: Learn how to manage shared state with SubscriptionRef in Effect, enabling multiple observers to subscribe to and react to state changes efficiently in concurrent environments.
 sidebar:
@@ -38432,8 +38989,12 @@ Example Output:
 </code></pre>
 <p>This setup ensures that each client observes the current value when it starts and receives all subsequent changes to the value.</p>
 <p>Since the changes are represented as streams, you can easily build more complex programs using familiar stream operators. You can transform, filter, or merge these streams with other streams to achieve more sophisticated behavior.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-107" class="section">
+                <hr>
 <h2>title: SynchronizedRef
 description: Master concurrent state management with SynchronizedRef in Effect, a mutable reference that supports atomic, effectful updates to shared state in concurrent environments.
 sidebar:
@@ -38507,8 +39068,12 @@ timestamp=... level=INFO fiber=#3 message=&quot;task 4&quot; message=&quot;[
 [ 10, 20, 30, 40 ]
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-108" class="section">
+                <hr>
 <h2>title: Consuming Streams
 description: Learn techniques for consuming streams, including collecting elements, processing with callbacks, and using folds and sinks.
 sidebar:
@@ -38583,8 +39148,12 @@ Effect.runPromise(effect).then(console.log)
 // Output: 6
 </code></pre>
 <p>In this example, we use a <code>Sink</code> to calculate the sum of the elements in the stream.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-109" class="section">
+                <hr>
 <h2>title: Creating Streams
 description: Learn various methods for creating Effect streams, from basic constructors to handling asynchronous data sources, pagination, and schedules.
 sidebar:
@@ -39164,8 +39733,12 @@ Output:
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-110" class="section">
+                <hr>
 <h2>title: Error Handling in Streams
 description: Learn how to handle errors in streams, ensuring robust recovery, retries, and graceful error management for reliable stream processing.
 sidebar:
@@ -39511,8 +40084,12 @@ Effect.runPromise(Stream.runCollect(stream)).then(console.log)
 }
 */
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-111" class="section">
+                <hr>
 <h2>title: Introduction to Streams
 description: Learn the fundamentals of streams, a powerful tool for emitting multiple values, handling errors, and working with finite or infinite sequences in your applications.
 sidebar:
@@ -39564,8 +40141,12 @@ const finiteNumberStream = Stream.range(1, 10)
 const infiniteNumberStream = Stream.iterate(1, (n) =&gt; n + 1)
 </code></pre>
 <p>In summary, a <code>Stream</code> is a versatile tool for representing programs that may yield multiple values, making it suitable for a wide range of tasks, from processing finite lists to handling infinite sequences.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-112" class="section">
+                <hr>
 <h2>title: Operations
 description: Explore essential operations for manipulating and managing data in streams, including tapping, mapping, filtering, merging, and more, to effectively process and transform streaming data.
 sidebar:
@@ -41018,8 +41599,12 @@ Output:
 */
 </code></pre>
 <p>In this example, we&#39;ve used the <code>Schedule.spaced(&quot;1 second&quot;)</code> schedule to introduce a one-second gap between each emission in the stream.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-113" class="section">
+                <hr>
 <h2>title: Resourceful Streams
 description: Learn how to manage resources in streams with safe acquisition and release, finalization for cleanup tasks, and ensuring post-finalization actions for robust resource handling in streaming applications.
 sidebar:
@@ -41116,8 +41701,12 @@ Doing some other works after stream&#39;s finalization
 */
 </code></pre>
 <p>In this code example, we start with our application logic represented by the <code>Application Logic.</code> message. We then use <code>Stream.finalizer</code> to specify the finalization step, which logs <code>Finalizing the stream</code>. After that, we use <code>Stream.ensuring</code> to indicate that we want to perform additional tasks after the stream&#39;s finalization, resulting in the message <code>Performing additional tasks after stream&#39;s finalization</code>. This ensures that our post-finalization actions are executed as expected.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-114" class="section">
+                <hr>
 <h2>title: TestClock
 description: Control time during testing with Effect&#39;s TestClock, simulating time passage, delays, and recurring effects without waiting for real time.
 sidebar:
@@ -41262,8 +41851,12 @@ const test = Effect.gen(function* () {
 
 Effect.runPromise(test)
 </code></pre>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-115" class="section">
+                <hr>
 <h2>title: Equal
 description: Implement value-based equality checks for improved data integrity and predictable behavior in TypeScript.
 sidebar:
@@ -41468,8 +42061,12 @@ Output:
 </code></pre>
 <p>In this code snippet, <code>HashMap</code> is used to create a map where the keys are objects constructed with <code>Data.struct</code>. These objects contain identical values, which would usually create separate entries in a regular JavaScript <code>Map</code> because the default comparison is reference-based.</p>
 <p><code>HashMap</code>, however, uses value-based comparison, meaning the two objects with identical content are treated as the same key. Thus, when we add both objects, the second key-value pair overrides the first, resulting in a single entry in the map.</p>
-<hr>
-<hr>
+
+            </section>
+        
+
+            <section id="section-116" class="section">
+                <hr>
 <h2>title: Hash
 description: Optimize equality checks with efficient hashing for faster comparisons in collections like hash sets and maps.
 sidebar:
@@ -41528,6 +42125,8 @@ console.log(Equal.equals(alice, bob))
 <li>The equality check returns <code>true</code> when comparing <code>alice</code> to a new <code>Person</code> object with identical property values and <code>false</code> when comparing <code>alice</code> to <code>bob</code> due to their differing property values.</li>
 </ul>
 
+            </section>
+        
     </body>
     </html>
   
